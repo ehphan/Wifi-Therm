@@ -1,2 +1,5 @@
 #!/bin/bash
-nc -l 55555
+while true;
+do
+    nc -l -p 55555
+done
