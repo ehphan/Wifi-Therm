@@ -20,6 +20,7 @@ def main():
         sta_if.connect(creds.wifi_ssid, creds.wifi_pass)
         time.sleep(5)
     print("connected to wifi!")
+    print(sta_if.ifconfig())
 
     # connect to DHT11
     d = dht.DHT11(machine.Pin(5))
