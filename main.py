@@ -8,10 +8,13 @@ import credentials as creds
 
 
 def main():
+    # turn off access point
+    ap_if = network.WLAN(network.AP_IF)
+    ap_if.active(False)
+
     # connect to wifi
     sta_if = network.WLAN(network.STA_IF)
     sta_if.active(True)
-
     while not sta_if.isconnected():
         print("trying to connect to wifi")
         sta_if.connect(creds.wifi_ssid, creds.wifi_pass)
